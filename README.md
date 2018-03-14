@@ -1,5 +1,5 @@
 # Route-Planner-Astar
 
-Simple implementation of A* algorithm. 
+A simple implementation of A* algorithm.
 
-Functionality can be teste in test.py.
+Functionality can be tested in test.py.
