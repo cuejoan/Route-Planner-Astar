@@ -23,7 +23,7 @@ def test(shortest_path_function):
                   "Your path:", path,
                   "Correct:  ", answer_path)
     if correct == len(MAP_40_ANSWERS):
-        print("All tests pass! Congratulations!")
+        print("All tests pass!")
     else:
         print("You passed", correct, "/", len(MAP_40_ANSWERS), "test cases")
         
