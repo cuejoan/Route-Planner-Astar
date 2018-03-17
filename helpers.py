@@ -93,13 +93,11 @@ def show_map(M, start=None, goal=None, path=None):
     plot(fig)
 
 
-def first_node(state):     
-    """f() is not 0, but I don't need f() value for the start node, so 
-    I didn't compute it"""    
-    return {"state":state, 'f':0, 'steps_cost':0, 'parent':None,
+def create_node(action, map, goal, parent):    
+    if parent == None:
+        f = heuristic_sld(map, goal, action)
+        return {"state":action, 'f':f, 'steps_cost':0, 'parent':parent,
             'path':[]}
-
-def create_node(action, map, goal, parent):     
     """ f is f() = g(n) + h(n) and steps_cost is C(start, state)"""
     cost = steps_cost(map, parent, action)
     f = cost + heuristic_sld(map, goal, action)    
