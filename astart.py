@@ -1,6 +1,5 @@
 from priorityqueue import PriorityQueue
-from helpers import (first_node, create_node, heuristic_sld,
-        steps_cost) 
+from helpers import create_node, heuristic_sld, steps_cost 
             
 def shortest_path(map,start,goal):
     node = a_star_graph_search(map,start,goal)
@@ -15,7 +14,7 @@ def a_star_graph_search(map,start,goal):
     not used in membership testing, a dic is used to associate keys and values.
     it may be better to create a Node class"""
     
-    node = first_node(start)
+    node = create_node(start, map, goal)
     if goal == start:
         node["path"].append(start)
         return node
@@ -32,7 +31,6 @@ def a_star_graph_search(map,start,goal):
         explored.add(state) 
         for action in map.roads[state]: 
             """child_node is not created here to not be called if in explored"""
-            #child_node = create_node(action, map, goal, node)
             if action not in explored and action not in frontier:
                 child_node = create_node(action, map, goal, node)
                 frontier.append(child_node)
