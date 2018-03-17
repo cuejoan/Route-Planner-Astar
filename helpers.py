@@ -93,7 +93,7 @@ def show_map(M, start=None, goal=None, path=None):
     plot(fig)
 
 
-def create_node(action, map, goal, parent):    
+def create_node(action, map, goal, parent=None):    
     if parent == None:
         f = heuristic_sld(map, goal, action)
         return {"state":action, 'f':f, 'steps_cost':0, 'parent':parent,
