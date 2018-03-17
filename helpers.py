@@ -1,10 +1,12 @@
-import networkx as nx
-import pickle
-import plotly.plotly as py
 import random
 import math
+import pickle
+
+import networkx as nx
+import plotly.plotly as py
 from plotly.graph_objs import *
 from plotly.offline import init_notebook_mode, plot, iplot
+
 
 class Map:
 	def __init__(self, G):
@@ -89,6 +91,7 @@ def show_map(M, start=None, goal=None, path=None):
                     yaxis=YAxis(showgrid=False, zeroline=False, showticklabels=False)))
 
     plot(fig)
+
 
 def first_node(state):     
     """f() is not 0, but I don't need f() value for the start node, so 
